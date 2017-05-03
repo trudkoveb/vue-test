@@ -1,29 +1,13 @@
 <template lang="jade">
-    ul
-        li {{ message }}
+    li {{ list }}
 </template>
 
 <script>
     module.exports = {
-        data:{
-                clubs: [
-                {
-                    name: 'Герта',
-                    status: false
-                },
-                {
-                    name: 'Бавария',
-                    status: true
-                },
-                {
-                    name: 'Вердер',
-                    status: false
-                },
-                {
-                    name: 'Шальке',
-                    status: false
+        data: function(){
+                return{
+                    list: 'ТЫ ЛОШАРА ЁБАННАЯ'
                 }
-                ]
             }
     }
 </script>

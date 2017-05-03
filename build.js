@@ -47,6 +47,7 @@
 	var Vue = __webpack_require__(1)
 	var message = __webpack_require__(3)
 	var list = __webpack_require__(10)
+	var info = __webpack_require__(15)
 
 	new Vue({
 	    el: 'body',
@@ -59,6 +60,13 @@
 	    el: 'body',
 	    components:{
 	        list: list
+	    }
+	})
+
+	new Vue({
+	    el: 'body',
+	    components: {
+	        info: info
 	    }
 	})
 
@@ -10945,20 +10953,10 @@
 	'use strict';
 
 	module.exports = {
-	    data: {
-	        clubs: [{
-	            name: 'Герта',
-	            status: false
-	        }, {
-	            name: 'Бавария',
-	            status: true
-	        }, {
-	            name: 'Вердер',
-	            status: false
-	        }, {
-	            name: 'Шальке',
-	            status: false
-	        }]
+	    data: function data() {
+	        return {
+	            list: 'ТЫ ЛОШАРА ЁБАННАЯ'
+	        };
 	    }
 	};
 
@@ -10966,7 +10964,104 @@
 /* 14 */
 /***/ function(module, exports) {
 
-	module.exports = "<ul><li>{{ message }}</li></ul>";
+	module.exports = "<li>{{ list }}</li>";
+
+/***/ },
+/* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	var __vue_styles__ = {}
+	__webpack_require__(19)
+	__vue_script__ = __webpack_require__(18)
+	if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
+	  console.warn("[vue-loader] components\\text.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(21)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+	if (__vue_template__) {
+	__vue_options__.template = __vue_template__
+	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-68bd20d7/text.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 16 */,
+/* 17 */,
+/* 18 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	module.exports = {
+	    name: 'ret',
+	    data: function data() {
+	        return {
+	            info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur omnis totam temporibus, provident magnam perferendis dolor sint aperiam ullam beatae.'
+	        };
+	    }
+	};
+
+/***/ },
+/* 19 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(20);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(7)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js!../node_modules/sass-loader/index.js?indentedSyntax=true!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./text.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js!../node_modules/sass-loader/index.js?indentedSyntax=true!../node_modules/vue-loader/lib/selector.js?type=style&index=0!./text.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 20 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(6)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "p {\n  text-align: center;\n  font-style: italic;\n  color: blue; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 21 */
+/***/ function(module, exports) {
+
+	module.exports = "<p>{{ info }}</p>";
 
 /***/ }
 /******/ ]);
